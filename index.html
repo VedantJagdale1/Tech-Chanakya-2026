@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/Fevicon.png">
+    <title>Tech Chanakya 2026 | Machine Odyssey | GNIMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+    <!-- ================= NAVBAR ================= -->
+    <nav id="navbar">
+
+        <!-- LOGO IMAGE -->
+        <a href="#hero" class="nav-logo">
+            <img src="assets/logo_tc_main.png" alt="Tech Chanakya Logo" class="nav-logo-img">
+
+
+            <div class="brand-main">
+                <span>TE<span class="brand-orange">C</span>H</span>
+                <span class="nav-marathi">चाणक्य</span>
+            </div>
+        </a>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+
+            <!-- BROCHURE DOWNLOAD -->
+            <li>
+                <a href="assets/brochure.pdf" download="Tech-Chanakya-Brochure.pdf" class="nav-brochure">
+                    Brochure
+                </a>
+            </li>
+
+            <li>
+                <a href="#events" class="nav-cta">
+                    Register
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="college-info"><br><br>
+        <img src="assets/gnims_logo.jpg" alt="College Logo" class="college-logo">
+        <span class="college-name"></span>
+    </div>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-grid-overlay"></div>
+
+        <div style="position:relative; z-index:2; text-align:center;">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                April 4,2026 • GNIMS,Mumbai
+            </div>
+
+            <h1 class="hero-title">
+                TE<span class="brand-orange">C</span>H
+                <span class="hero-marathi">चाणक्य</span>
+            </h1>
+            <p class="hero-tagline">
+                Where Intelligence Meets Technology
+            </p>
+            <div class="machine-wrapper">
+                <div class="machine-line"></div>
+                <div class="hero-theme">Machine Odyssey</div>
+                <p class="theme-tagline">
+                    The Secret Life of Machine
+                </p>
+            </div>
+
+
+            <div class="hero-countdown">
+                <div class="countdown-unit">
+                    <span id="cd-days" class="countdown-num">00</span>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-hours" class="countdown-num">00</span>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-mins" class="countdown-num">00</span>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cd-secs" class="countdown-num">00</span>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-left">
+                <div class="section-label">About The Fest</div>
+                <h2 class="section-title">
+                    What is
+                    <span class="hero-title" style="font-size: inherit; display: inline-block;">
+                        <span class="tech-text">TE<span class="brand-orange">C</span>H</span>
+                        <span class="hero-marathi" style="font-size: inherit;">चाणक्य ?</span>
+                    </span>
+                </h2>
+                <p class="about-description">
+                    Tech Chanakya is GNIMS’ flagship annual technical festival celebrating
+                    innovation, coding, gaming and entrepreneurship.
+                </p>
+
+
+            </div>
+
+            <div class="about-card">
+                <div class="card-content">
+                    <h3>Why Participate?</h3>
+                    <ul>
+                        <li>₹20,000+ Prize Pool</li>
+                        <li>Certificates & Recognition</li>
+                        <li>Gaming Tournaments</li>
+                        <li>Networking Opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+        <div class="section-header" style="text-align:center;">
+            <div class="section-label">Competitions</div>
+            <h2 class="section-title">Featured <span class="highlight">Events</span></h2>
+        </div>
+
+        <div class="events-filter">
+            <button class="filter-btn active" onclick="filterEvents('all', this)">All</button>
+            <button class="filter-btn" onclick="filterEvents('technical', this)">Technical</button>
+            <button class="filter-btn" onclick="filterEvents('non-tech', this)">Non-Tech</button>
+            <button class="filter-btn" onclick="filterEvents('gaming', this)">Gaming</button>
+        </div>
+
+        <div class="events-grid" id="events-grid"></div>
+    </section>
+
+    <section id="registration">
+        <div class="form-container">
+
+            <h2 id="form-title">Event Registration</h2>
+            <p class="form-subtitle">Fill the details carefully</p>
+
+            <form id="dynamic-form" method="POST"
+                action="https://script.google.com/macros/s/AKfycbx9cNhSCwUZt-mlMOwYZ-SPFfVYOzoygMmGq0A1dSlqpJWvEf88WkZw5biH1CdlsaPb/exec"
+                enctype="multipart/form-data">
+
+                <input type="hidden" id="eventName" name="event">
+                <input type="hidden" id="eventCategory" name="category">
+
+                <div id="form-fields"></div>
+
+                <div class="form-group">
+                    <label>Payment ID / UTR</label>
+                    <input type="text" id="paymentId" name="paymentId"
+                        placeholder="Enter UPI Transaction ID / UTR Number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>College ID Proof</label>
+
+                    <input type="file" id="idProof" name="idProof" accept=".pdf,.doc,.docx,image/*" required>
+
+                    <small>
+                        Solo: Upload your college ID card<br>
+                        Team: Upload ONE combined PDF containing IDs of all members
+                    </small>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Screenshot</label>
+
+                    <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept=".pdf,.doc,.docx,image/*"
+                        required>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Registration
+                </button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✖</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <a id="modal-register" target="_blank" class="btn-primary">Register Now</a>
+        </div>
+    </div>
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <h3>
+                    TE<span class="brand-orange">C</span>H
+                    <span class="nav-marathi">चाणक्य</span>
+                </h3>
+                <p>
+                    The flagship technical festival of GNIMS —
+                    celebrating innovation, gaming, coding and creativity.
+                </p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#registration">Register</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Event Categories</h4>
+                <ul>
+                    <li>Technical</li>
+                    <li>Gaming</li>
+                    <li>Non-Technical</li>
+                    <li>PR Events</li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+
+                <div class="social-icons">
+
+                    <a href="https://www.instagram.com/tech_chanakya_?igsh=MTJ0OWJndWZzbWRteQ==" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/gnims-mca/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                </div>
+
+                <p class="footer-contact">
+                    📍 G.N. Khalsa College Campus, Matunga -East, Mumbai-400 019<br>
+                    📧 techchanakya@gnims.com
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Tech Chanakya — GNIMS. All Rights Reserved.
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+<!-- Heloo -->
+
+</html>
